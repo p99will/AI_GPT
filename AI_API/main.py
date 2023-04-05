@@ -45,7 +45,7 @@ def addHTML(msg, user):
     htmlMSG = '''             
 <div class="container">
     <div class="AI_MSG">
-        <div class="msg_from"> {|usr|}: </div>
+        <div class="msg_from"><b>{|usr|}:</b> </div>
         <div class="container">
             {|msg|}
         </div>
