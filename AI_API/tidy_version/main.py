@@ -1,7 +1,10 @@
 from imports import *
+from model import *
+import openai
 
 # -------- Consts --------
 debugging = True
+pagebreak = '<hr class="hr-primary">'
 
 # -------- Objects --------
 app = Flask(__name__)
@@ -20,31 +23,39 @@ def index():
 @app.route('/send_message', methods=['POST'])
 def send_message():
     message = request.form['message']
+    HTMLresponce = process_message(message)
+    HTMLmessage = addHTML(message, "Me")
+    debug(HTMLresponce)
+    return HTMLmessage + HTMLresponce + pagebreak
 
 
-def ai_talk(msg):
-    htmlMSG = []
-    # htmlMSG.append('<div class="container">')
-    # htmlMSG.append('    <div class="AI_MSG">')
-    # htmlMSG.append('        <div class="msg_from"> AI: </div>')
-    # htmlMSG.append('        <div class="container">')
-    # htmlMSG.append(msg)
-    htmlMSG.append(r'''
-                   
+def addHTML(msg, user):
+    htmlMSG = '''             
 <div class="container">
-<div class="AI_MSG">
-<div class="msg_from"> AI: </div>
-''')
+    <div class="AI_MSG">
+        <div class="msg_from"> {|usr|}: </div>
+        <div class="container">
+            {|msg|}
+        </div>
+    </div>
+</div>
+'''.replace("{|msg|}", msg).replace("{|usr|}", user)
+    return ''.join(htmlMSG)
     
 
 def reset_AI():
     msgs.clear()
-    return ai_talk("Okay. lets start over.")
+    return addHTML("Okay. lets start over.", "AI")
 
 def process_message(msg):
-     if(msg == "reset"):
+    if(msg == "reset"):
         return reset_AI()
+    return addHTML(talk(msg), "AI")
 
+def debug(msg):
+    if(debugging):
+        print(msg)
+        
 if __name__ == '__main__':
     webbrowser.open("http://127.0.0.1:5000") 
     app.run(debug=debugging)
