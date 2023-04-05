@@ -34,7 +34,7 @@ def index():
 def send_message():
     message = request.form['message']               # get the message from the request
     HTMLresponce = process_message(message)         # process the message, and get the AI's responce
-    HTMLmessage = addHTML(message, "Me")            # add HTML formatting to the message
+    HTMLmessage = addHTML(message.replace('\n', '<br>'), "Me")            # add HTML formatting to the message
     debug(HTMLresponce)
     return HTMLmessage + HTMLresponce + pagebreak   # return the message and the AI's responce with a page break
 

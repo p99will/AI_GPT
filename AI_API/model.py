@@ -6,7 +6,7 @@ import re
 
 
 model = "gpt-3.5-turbo"
-temperature = 0.1   # 0.1 - 1.0
+temperature = 1   # 0.1 - 1.0
 
 msgs = []  # list of messages for openai
 
