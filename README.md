@@ -12,4 +12,4 @@ Unix:
 `export OPENAI_API_KEY="your_api_key"`
 
 
-   ![Example of its use](AI_GPT/Screenshot_3.png)
+   ![Example of its use](https://github.com/p99will/AI_GPT/blob/master/AI_API/Screenshot_3.png)
