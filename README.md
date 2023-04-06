@@ -28,5 +28,6 @@ pip install pygments regex openai
    ![Example of its use](https://github.com/p99will/AI_GPT/blob/master/AI_API/Screenshot_3.png)
 
 
-`type: 'reset' to start fresh`:
+type: `reset` to start fresh:
+
    ![Example reset](https://github.com/p99will/AI_GPT/blob/master/AI_API/Screenshot_4.png)
