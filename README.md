@@ -13,3 +13,6 @@ Unix:
 
 
    ![Example of its use](https://github.com/p99will/AI_GPT/blob/master/AI_API/Screenshot_3.png)
+
+
+`type: 'reset' to start fresh`

@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="syntax.css">
 	<link rel="stylesheet" href="style.css">
 	<script>
-
+		// Keeps the chat scrolled to the bottom
 		$(document).ready(function () {
 			// Get the height of the window
 			var windowHeight = $(window).height();
@@ -39,7 +39,7 @@
 		});
 
 
-		// Handle the form being submitted
+		// Handle the Send button being clicked
 		$(document).ready(function () {
 			$('#sendButton').on('click', function () {
 				var $this = $(this);
@@ -68,6 +68,7 @@
 
 
 		// Handle the enter key being pressed
+		// Holding Shift and pressing Enter will create a new line
 		function handleKeyDown(event) {
 			if (event.keyCode === 13 && !event.shiftKey) {
 				// Enter key was pressed
@@ -104,8 +105,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-
 </body>
 
 </html>
