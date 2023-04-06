@@ -10,3 +10,6 @@ PS:
 
 Unix:
 `export OPENAI_API_KEY="your_api_key"`
+
+
+   ![Example of its use](Screenshot_3.png)
