@@ -1,6 +1,6 @@
 from imports import *
 from model import *
-import openai
+import openai  
 
 # -------- Consts --------
 debugging = False                      # Set to True to enable debugging
